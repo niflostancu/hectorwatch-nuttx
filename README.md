@@ -21,7 +21,7 @@ Then run these commands to install the toolchain for working with ESP32S3 (assum
 ```bash
 sudo mkdir -p /opt/xtensa
 curl -L "https://github.com/espressif/crosstool-NG/releases/download/esp-12.2.0_20230208/xtensa-esp32s3-elf-12.2.0_20230208-x86_64-linux-gnu.tar.xz" | sudo tar -xJ -C /opt/xtensa
-echo "export PATH=\$PATH:/opt/xtensa/xtensa-esp32s3-elf/bin" >> ~/.bashrc
+echo "export PATH=$PATH:/opt/xtensa/xtensa-esp32s3-elf/bin" >> ~/.bashrc
 source ~/.bashrc
 ```
 
