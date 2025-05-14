@@ -25,7 +25,19 @@ echo "export PATH=$PATH:/opt/xtensa/xtensa-esp32s3-elf/bin" >> ~/.bashrc
 source ~/.bashrc
 ```
 
-# Using the board
+# Using hacktorwatch
+
+> Note: Set the device in download mode before flashing
+
+```bash
+cd ./nuttx
+./tools/configure.sh -l hacktorwatch:usbnsh
+make -j$(nproc)
+make flash ESPTOOL_PORT=/dev/ttyACM0 ESPTOOL_BAUD=115200 ESPTOOL_BINDIR=../esp32s3-bins
+picocom /dev/ttyACM0 -b 115200
+```
+
+# Using the old smartwatch version
 
 ## Building
 
@@ -42,6 +54,7 @@ cd ./nuttx
 ./tools/configure.sh -l ./boards/custom-boards/esp32s3-hectorwatch/configs/usbnsh
 make -j$(nproc)
 ```
+
 
 ## Flashing
 
